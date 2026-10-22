@@ -1,0 +1,15 @@
+O objetivo deste exercício é somar todos os elementos de uma lista utilizando a lógica de Dividir para Conquistar através da recursão (uma função que chama a si mesma).
+
+Para entender como o computador processa isso, dividimos o código em duas partes essenciais:
+
+if (lista.Count == 0) 
+{
+    return 0;
+}
+
+Por que é necessário? Se uma função recursiva não tiver uma condição de parada, ela rodará para sempre até estourar a memória (Stack Overflow). O caso-base define o menor pedaço possível do problema: se a lista estiver vazia ([]), a soma lógica de nada é 0.
+
+return lista[0] + Soma(lista.Skip(1).ToList());
+
+Como funciona? Em vez de somar tudo de uma vez com um loop tradicional (for ou foreach), nós pegamos o primeiro elemento (lista[0]) e somamos com o resultado de uma nova chamada da função, mas sem o primeiro elemento (lista.Skip(1) em C# ou lista.slice(1) em JavaScript).   Na prática: Imagine que temos a lista [2, 4, 6]:A função pega o 2 e chama soma([4, 6]).A nova chamada pega o 4 e chama soma([6]).A próxima pega o 6 e chama soma([]).Quando a lista fica vazia, atinge o caso-base e retorna 0.A pilha de chamadas (call stack) começa a resolver de trás para frente: 6 + 0 = 6, depois 4 + 6 = 10, e por fim 2 + 10 = 12.
+
