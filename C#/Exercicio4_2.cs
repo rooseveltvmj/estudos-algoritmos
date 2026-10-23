@@ -1,5 +1,5 @@
 using System.Collections.Generic; // Importa a biblioteca System.Collections.Generic para utilizar listas genéricas
-using System.Linkq; // Importa a biblioteca System.Linq para utilizar consultas LINQ
+using System.Linq; // Importa a biblioteca System.Linq para utilizar consultas LINQ
 
 public class Exercicio4_2
 {
