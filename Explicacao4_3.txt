@@ -1,0 +1,14 @@
+O objetivo do Exercício 4.3 é encontrar o valor mais alto (máximo) em uma lista de forma recursiva, utilizando a lógica de Dividir para Conquistar.
+
+Para resolvermos isso, estruturamos o raciocínio em duas partes:
+
+1. O Caso-Base (O Ponto de Parada):
+- Se a lista tiver apenas 1 elemento (lista.Count == 1 ou lista.length === 1), esse único elemento é o maior por definição. Retornamos ele.
+- Por que é necessário? É o limite onde a recursão para de se dividir, pois um elemento isolado não precisa ser comparado com mais ninguém.
+
+2. O Caso Recursivo (Encolhendo o Problema):
+- Separamos o primeiro elemento e pedimos para a função encontrar o maior valor no restante da lista (.Skip(1) em C# ou .slice(1) em JavaScript).
+- Guardamos esse resultado em uma variável (chamada de subMaximo).
+- Fazemos um confronto direto: o nosso primeiro elemento é maior que o subMaximo? 
+  * Se sim, ele é o maior atual e o retornamos.
+  * Se não, o subMaximo vence e é retornado.
